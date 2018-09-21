@@ -23,7 +23,7 @@ def mars_news():
     news_p = soup.find_all('div', class_="article_teaser_body")[0].text #paragraph of first article
     
     browser.quit()
-    return {news_title: news_p} #return a dict of title and paragraph
+    return [news_title, news_p] #return a dict of title and paragraph
 
 
 def featured_image():
@@ -104,18 +104,18 @@ def mars_facts():
 
 def scrape_all():
     mydict={}
-    # a=mars_news()
-    # mydict['a']=a
-    # b=featured_image()
-    # mydict['b']=b
-    # c=hemispheres()
-    # mydict['c']=c
-    # d=twitter_weather()
-    # mydict['d']=d
-    # e=mars_facts()
-    # mydict['e']=e
+    headline=mars_news()
+    mydict['headline']=headline
+    # img=featured_image()
+    # mydict['img']=img
+    hemis=hemispheres()
+    mydict['hemis']=hemis
+    # twit=twitter_weather()
+    # mydict['twit']=twit
+    # table=mars_facts()
+    # mydict['table']=table
 
-    return print(mydict)
+    return  mydict
 
 if __name__ == "__main__":
 

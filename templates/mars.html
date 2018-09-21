@@ -11,10 +11,10 @@
     <title>Portfolio Item - Start Bootstrap Template</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="../css/portfolio-item.css" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/portfolio-item.css')}}"rel="stylesheet">
 
   </head>
 
@@ -52,15 +52,18 @@
     <div class="container">
 
       <!-- Portfolio Item Heading -->
-      <h1 class="my-4">Page Heading
-        <small>Secondary Text</small>
+      <h1 class="my-4">{{news.headline[0]}}
+        <small>{{news.headline[1]}}</small>
       </h1>
 
       <!-- Portfolio Item Row -->
       <div class="row">
 
         <div class="col-md-8">
-          <img class="img-fluid" src="http://placehold.it/750x500" alt="">
+          <img class="img-fluid" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Ash_Tree_-_geograph.org.uk_-_590710.jpg/330px-Ash_Tree_-_geograph.org.uk_-_590710.jpg" alt="">
+          
+          
+          <!-- <img class="img-fluid" src={{news.img}} alt=""> -->
         </div>
 
         <div class="col-md-4">
@@ -78,32 +81,32 @@
       </div>
       <!-- /.row -->
 
-      <!-- Related Projects Row -->
+      Related Projects Row
       <h3 class="my-4">Related Projects</h3>
 
       <div class="row">
 
         <div class="col-md-3 col-sm-6 mb-4">
           <a href="#">
-            <img class="img-fluid" src="http://placehold.it/500x300" alt="">
+            <img class="img-fluid" src="{{news['hemis'][0]['img_url']}}">
           </a>
         </div>
 
         <div class="col-md-3 col-sm-6 mb-4">
           <a href="#">
-            <img class="img-fluid" src="http://placehold.it/500x300" alt="">
+            <img class="img-fluid" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Ash_Tree_-_geograph.org.uk_-_590710.jpg/330px-Ash_Tree_-_geograph.org.uk_-_590710.jpg" alt="">
           </a>
         </div>
 
         <div class="col-md-3 col-sm-6 mb-4">
           <a href="#">
-            <img class="img-fluid" src="http://placehold.it/500x300" alt="">
+            <img class="img-fluid" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Ash_Tree_-_geograph.org.uk_-_590710.jpg/330px-Ash_Tree_-_geograph.org.uk_-_590710.jpg" alt="">
           </a>
         </div>
 
         <div class="col-md-3 col-sm-6 mb-4">
           <a href="#">
-            <img class="img-fluid" src="http://placehold.it/500x300" alt="">
+            <img class="img-fluid" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Ash_Tree_-_geograph.org.uk_-_590710.jpg/330px-Ash_Tree_-_geograph.org.uk_-_590710.jpg" alt="">
           </a>
         </div>
 
@@ -122,8 +125,8 @@
     </footer>
 
     <!-- Bootstrap core JavaScript -->
-    <script src="../vendor/jquery/jquery.min.js"></script>
-    <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='vendor/jquery/jquery.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 
   </body>
 

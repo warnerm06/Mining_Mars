@@ -11,14 +11,16 @@ mongo = PyMongo(app)
 
 @app.route("/")
 def index():
-    scraped_info=scrape_mars.scrape_all()
+    
 
-    return render_template("index.html",scraped_info=scraped_info)
+    return render_template("index.html")
 
 
 @app.route("/scrape")
 def scrape():
-    return render_template("mars.html")
+    news=scrape_mars.scrape_all()
+
+    return render_template("mars.html", news=news)
 
 
 if __name__ == "__main__":
