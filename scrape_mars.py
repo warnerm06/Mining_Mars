@@ -46,10 +46,10 @@ def featured_image():
 
     browser.quit() #quit browser
 
-    class_containing_img=soup2.find('a',class_='button fancybox')['data-link'] #gets relative image link "/img.jpg"
+    class_containing_img=soup2.find('a',class_='button fancybox')['data-fancybox-href'] #gets relative image link "/img.jpg"
 
     return urljoin(url, class_containing_img) #join base url and relative url
-
+    
 
 def hemispheres():
     url= "https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars"
@@ -75,7 +75,7 @@ def hemispheres():
         browser.back()
         mydict = {'title': title, 'img_url': img_url}
         data_dict.append(mydict)
-        
+    browser.quit()
     return data_dict
     
 def twitter_weather():
@@ -106,8 +106,8 @@ def scrape_all():
     mydict={}
     headline=mars_news()
     mydict['headline']=headline
-    # img=featured_image()
-    # mydict['img']=img
+    img=featured_image()
+    mydict['img']=img
     hemis=hemispheres()
     mydict['hemis']=hemis
     twit=twitter_weather()
