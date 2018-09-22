@@ -22,11 +22,11 @@ def scrape():
 
     mongo.db.drop_collection('collection')
 
-    # forecasts = mongo.db.collection.find() #doesn't appear to be needed
-
     mongo.db.collection.insert_one(news)
     
-    return render_template("mars.html", news=news)
+    data = mongo.db.collection.find_one() 
+
+    return render_template("mars.html", data=data)
 
 
 if __name__ == "__main__":
