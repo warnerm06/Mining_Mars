@@ -69,7 +69,7 @@ def hemispheres():
         title = data[i].find('div', class_="description").find('h3').text
         browser.find_by_css('div[class="collapsible results"]').find_by_css('div[class="item"]')[i].find_by_css('div[class="description"]').find_by_css('a').click()
         for img in browser.find_by_css('div[class="downloads"]').find_by_css('a'):
-            if ('Original' in img.text):
+            if ('Sample' in img.text):
                 img_url = img['href']
 
         browser.back()
