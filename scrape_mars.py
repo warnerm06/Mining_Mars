@@ -110,8 +110,8 @@ def scrape_all():
     # mydict['img']=img
     hemis=hemispheres()
     mydict['hemis']=hemis
-    # twit=twitter_weather()
-    # mydict['twit']=twit
+    twit=twitter_weather()
+    mydict['twit']=twit
     # table=mars_facts()
     # mydict['table']=table
 

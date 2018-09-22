@@ -20,6 +20,12 @@ def index():
 def scrape():
     news=scrape_mars.scrape_all()
 
+    mongo.db.drop_collection('collection')
+
+    # forecasts = mongo.db.collection.find() #doesn't appear to be needed
+
+    mongo.db.collection.insert_one(news)
+    
     return render_template("mars.html", news=news)
 
 
