@@ -18,11 +18,11 @@ def index():
 
 @app.route("/scrape")
 def scrape():
-    news=scrape_mars.scrape_all()
+    # news=scrape_mars.scrape_all()
 
-    mongo.db.drop_collection('collection')
+    # mongo.db.drop_collection('collection')
 
-    mongo.db.collection.insert_one(news)
+    # mongo.db.collection.insert_one(news)
     
     data = mongo.db.collection.find_one() 
 

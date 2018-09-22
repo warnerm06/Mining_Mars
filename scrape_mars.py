@@ -112,8 +112,8 @@ def scrape_all():
     mydict['hemis']=hemis
     twit=twitter_weather()
     mydict['twit']=twit
-    # table=mars_facts()
-    # mydict['table']=table
+    table=mars_facts()
+    mydict['table']=table
 
     return  mydict
 
