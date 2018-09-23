@@ -100,6 +100,10 @@ def mars_facts():
     tables= pd.read_html(url) #read html
     df=pd.DataFrame(tables[0]) #convert all tables to dfs ;only select the first table [0]
 
+    df.rename(columns={0:"Data",1:"Value"},inplace=True)
+    df.rename_axis("Data")
+    df.set_index('Data',inplace=True)    
+    
     return df.to_html() #return html
 
 def scrape_all():

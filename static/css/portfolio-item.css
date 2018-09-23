@@ -15,3 +15,11 @@ body {
     padding-top: 56px;
   }
 }
+
+ul{
+  list-style: none;
+}
+
+h4{
+  text-indent: 75px;
+}

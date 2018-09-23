@@ -1,137 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
+<head>
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
 
-    <title>Portfolio Item - Start Bootstrap Template</title>
+  <title>Mars Information Aggregator</title>
 
-    <!-- Bootstrap core CSS -->
-    <link href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+  <!-- Bootstrap core CSS -->
+  <link href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
 
-    <!-- Custom styles for this template -->
-    <link href="{{ url_for('static', filename='css/portfolio-item.css')}}"rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link href="{{ url_for('static', filename='css/portfolio-item.css')}}" rel="stylesheet">
 
-  </head>
+</head>
 
-  <body>
+<body>
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-      <div class="container">
-        <a class="navbar-brand" href="#">Start Bootstrap</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Home
-                <span class="sr-only">(current)</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Services</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Contact</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-
-    <!-- Page Content -->
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
+      <a class="navbar-brand" href="{{url_for('index')}}">Home</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="https://twitter.com/marswxreport?lang=en">Nasa Twitter
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://mars.nasa.gov/news/?page=0&per_page=40&order=publish_date+desc%2Ccreated_at+desc&search=&category=19%2C165%2C184%2C204&blank_scope=Latest">More
+              News</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://www.jpl.nasa.gov/spaceimages/">More Images</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://space-facts.com/mars/">More Facts</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-      <!-- Portfolio Item Heading -->
-      <h1 class="my-4">{{data.headline[0]}}
-        <small>{{data.headline[1]}}</small>
-      </h1>
+  <!-- Page Content -->
+  <div class="container">
 
-      <!-- Portfolio Item Row -->
-      <div class="row">
+    <!-- Portfolio Item Heading -->
+    <h1 class="my-4">{{data.headline[0]}}
 
-        <div class="col-md-8">
-          <img class="img-fluid" src="{{data['img']}}" alt="">
-          
-          
-          <!-- <img class="img-fluid" src={{data.img}} alt=""> -->
-        </div>
+    </h1>
+    <h4>{{data.headline[1]}}</h4>
+    <!-- Portfolio Item Row -->
+    <br>
+    <div class="row">
 
-        <div class="col-md-4">
-          <!-- <h3 class="my-3">Project Description</h3> -->
-          <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae. Sed dui lorem, adipiscing in adipiscing et, interdum nec metus. Mauris ultricies, justo eu convallis placerat, felis enim.</p> -->
-          <h3 class="my-3">Latest Weather from Twitter</h3>
-          <ul>
-            <li>{{data['twit']}}/li>
-            <li>{{data['table']|safe}}</li>
-            <!-- <li>Consectetur</li>
+      <div class="col-md-8">
+        <img class="img-fluid" src="{{data['img']}}" alt="">
+
+
+        <!-- <img class="img-fluid" src={{data.img}} alt=""> -->
+      </div>
+
+      <div class="col-md-4">
+        <!-- <h3 class="my-3">Project Description</h3> -->
+        <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae. Sed dui lorem, adipiscing in adipiscing et, interdum nec metus. Mauris ultricies, justo eu convallis placerat, felis enim.</p> -->
+        <h3 class="my-3">Latest Weather from Twitter</h3>
+        <ul>
+          <li>{{data['twit']}}</li>
+          <li><br></li>
+          <li>{{data['table']|safe}}</li>
+          <!-- <li>Consectetur</li>
             <li>Adipiscing Elit</li> -->
-          </ul>
-        </div>
-
+        </ul>
       </div>
-      <!-- /.row -->
+    </div>
+    <!-- /.row -->
 
-      Related Projects Row
-      <!-- <h3 class="my-4">Related Projects</h3> -->
+    <!-- <h3 class="my-4">Related Projects</h3> -->
 
-      <div class="row">
+    <div class="row">
 
-        <div class="col-md-3 col-sm-6 mb-4">
-          <h3>{{data['hemis'][0]['title']}}</h3>
-          <a href="#">
-            <img class="img-fluid" src="{{data['hemis'][0]['img_url']}}" alt="">
-          </a>
-        </div>
-
-        <div class="col-md-3 col-sm-6 mb-4">
-            <h3>{{data['hemis'][1]['title']}}</h3>
-          <a href="#">
-            <img class="img-fluid" src="{{data['hemis'][1]['img_url']}}" alt="">
-          </a>
-        </div>
-
-        <div class="col-md-3 col-sm-6 mb-4">
-            <h3>{{data['hemis'][2]['title']}}</h3>
-          <a href="#">
-            <img class="img-fluid" src="{{data['hemis'][2]['img_url']}}" alt="">
-          </a>
-        </div>
-
-        <div class="col-md-3 col-sm-6 mb-4">
-            <h3>{{data['hemis'][3]['title']}}</h3>
-          <a href="#">
-            <img class="img-fluid" src="{{data['hemis'][3]['img_url']}}" alt="">
-          </a>
-        </div>
-
+      <div class="col-md-3 col-sm-6 mb-4">
+        <h3>{{data['hemis'][0]['title']}}</h3>
+        <a href="#">
+          <img class="img-fluid" src="{{data['hemis'][0]['img_url']}}" alt="">
+        </a>
       </div>
-      <!-- /.row -->
+
+      <div class="col-md-3 col-sm-6 mb-4">
+        <h3>{{data['hemis'][1]['title']}}</h3>
+        <a href="#">
+          <img class="img-fluid" src="{{data['hemis'][1]['img_url']}}" alt="">
+        </a>
+      </div>
+
+      <div class="col-md-3 col-sm-6 mb-4">
+        <h3>{{data['hemis'][2]['title']}}</h3>
+        <a href="#">
+          <img class="img-fluid" src="{{data['hemis'][2]['img_url']}}" alt="">
+        </a>
+      </div>
+
+      <div class="col-md-3 col-sm-6 mb-4">
+        <h3>{{data['hemis'][3]['title']}}</h3>
+        <a href="#">
+          <img class="img-fluid" src="{{data['hemis'][3]['img_url']}}" alt="">
+        </a>
+      </div>
 
     </div>
+    <!-- /.row -->
+
+  </div>
+  <!-- /.container -->
+
+  <!-- Footer -->
+  <footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; Mars Miners Inc. 2018</p>
+    </div>
     <!-- /.container -->
+  </footer>
 
-    <!-- Footer -->
-    <footer class="py-5 bg-dark">
-      <div class="container">
-        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2018</p>
-      </div>
-      <!-- /.container -->
-    </footer>
+  <!-- Bootstrap core JavaScript -->
+  <script src="{{ url_for('static', filename='vendor/jquery/jquery.min.js')}}"></script>
+  <script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 
-    <!-- Bootstrap core JavaScript -->
-    <script src="{{ url_for('static', filename='vendor/jquery/jquery.min.js')}}"></script>
-    <script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-
-  </body>
+</body>
 
 </html>
