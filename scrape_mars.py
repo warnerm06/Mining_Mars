@@ -126,4 +126,4 @@ if __name__ == "__main__":
     # If running as script, print scraped data
     scrape_all()
 
-# scrape_all()
+# scrape_all() test
