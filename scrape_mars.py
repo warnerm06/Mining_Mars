@@ -11,7 +11,7 @@ def mars_news():
     #url to scrape
     url= "https://mars.nasa.gov/news/?page=0&per_page=40&order=publish_date+desc%2Ccreated_at+desc&search=&category=19%2C165%2C184%2C204&blank_scope=Latest"
 
-    executable_path = {'executable_path': 'chromedriver'} #path to chromedriver; in this case it's in the same file
+    executable_path = {'executable_path': 'chromedriver.exe'} #path to chromedriver.exe; in this case it's in the same file
     browser = Browser('chrome', **executable_path, headless = False) #gives us a broswer object
 
     browser.visit(url)#visit url
@@ -30,7 +30,7 @@ def featured_image():
 
     url= "https://www.jpl.nasa.gov/spaceimages/?search=&category=Mars"
 
-    executable_path = {'executable_path': 'chromedriver'} #path to chromedriver; in this case it's in the same file
+    executable_path = {'executable_path': 'chromedriver.exe'} #path to chromedriver.exe; in this case it's in the same file
     browser = Browser('chrome', **executable_path, headless = False) #gives us a broswer object
 
     browser.visit(url)#visit url
@@ -54,7 +54,7 @@ def featured_image():
 def hemispheres():
     url= "https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars"
 
-    executable_path = {'executable_path': 'chromedriver'} #path to chromedriver; in this case it's in the same file
+    executable_path = {'executable_path': 'chromedriver.exe'} #path to chromedriver.exe; in this case it's in the same file
     browser = Browser('chrome', **executable_path, headless = False) #gives us a broswer object
 
     browser.visit(url)#visit url
@@ -81,7 +81,7 @@ def hemispheres():
 def twitter_weather():
     url= "https://twitter.com/marswxreport?lang=en"
 
-    executable_path = {'executable_path': 'chromedriver'} #path to chromedriver; in this case it's in the same file
+    executable_path = {'executable_path': 'chromedriver.exe'} #path to chromedriver.exe; in this case it's in the same file
     browser = Browser('chrome', **executable_path, headless = False) #gives us a broswer object
 
     browser.visit(url)#visit url
