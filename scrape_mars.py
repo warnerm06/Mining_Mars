@@ -5,7 +5,9 @@ from urllib.parse import urljoin
 import pandas as pd
 from pprint import pprint
 import time
-import datetime as dt
+# import datetime as dt
+import re
+
 
 def mars_news():
     #url to scrape
@@ -81,7 +83,7 @@ def hemispheres():
 def twitter_weather():
     url= "https://twitter.com/marswxreport?lang=en"
 
-    executable_path = {'executable_path': 'chromedriver.exe'} #path to chromedriver.exe; in this case it's in the same file
+    executable_path = {'executable_path': 'chromedriver'} #path to chromedriver; in this case it's in the same file
     browser = Browser('chrome', **executable_path, headless = False) #gives us a broswer object
 
     browser.visit(url)#visit url
@@ -90,8 +92,8 @@ def twitter_weather():
     soup = bs(html_code, "html.parser") #beautiful soup to parse
 
     browser.quit() #quit browser
-    
-    return soup.find('p', class_="TweetTextSize TweetTextSize--normal js-tweet-text tweet-text").text #get first tweet; text only
+
+    return soup.find('p',text=re.compile('^Sol*')).text#class_="TweetTextSize TweetTextSize--normal js-tweet-text tweet-text") #get first "Sol" tweet; text only
 
 def mars_facts():
 
