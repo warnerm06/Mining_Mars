@@ -5,7 +5,7 @@ Flask==1.0.2
 Flask-Cors==3.0.6
 Flask-PyMongo==2.1.0
 gmaps==0.8.0
-Jinja2==2.10
+Jinja2==2.11.3
 numpy==1.15.1
 numpydoc==0.8.0
 py==1.6.0
