@@ -2,7 +2,7 @@ beautifulsoup4==4.6.3
 bs4==0.0.1
 decorator==4.3.0
 Flask==1.0.2
-Flask-Cors==3.0.6
+Flask-Cors==3.0.9
 Flask-PyMongo==2.1.0
 gmaps==0.8.0
 Jinja2==2.10
